@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/home/ben/dev/sol-grid-bot",
+  "command": "/usr/bin/c++  -I/home/ben/dev/sol-grid-bot/include -I/home/ben/dev/sol-grid-bot/lib -std=gnu++20 -o CMakeFiles/bot.dir/src/main.cpp.o -c /home/ben/dev/sol-grid-bot/src/main.cpp",
+  "file": "/home/ben/dev/sol-grid-bot/src/main.cpp",
+  "output": "CMakeFiles/bot.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/ben/dev/sol-grid-bot",
+  "command": "/usr/bin/c++  -I/home/ben/dev/sol-grid-bot/include -I/home/ben/dev/sol-grid-bot/lib -std=gnu++20 -o CMakeFiles/bot.dir/src/wallet.cpp.o -c /home/ben/dev/sol-grid-bot/src/wallet.cpp",
+  "file": "/home/ben/dev/sol-grid-bot/src/wallet.cpp",
+  "output": "CMakeFiles/bot.dir/src/wallet.cpp.o"
+}
+]
