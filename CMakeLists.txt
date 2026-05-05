@@ -10,6 +10,8 @@ set(
     SOURCES 
         src/main.cpp
         src/wallet.cpp
+        src/logger.cpp
+        src/config.cpp
 )
 
 add_executable(bot ${SOURCES})

@@ -1,9 +1,10 @@
 class Logger
 {
     private:
-        int fd;
+        static int fd;
+        Logger();
     public:
-        Logger(const char* path);
-        ~Logger();
-
+        static int init(const char* path);
+        static int log(const char* message);
+        static void close();
 };

@@ -1,16 +1,21 @@
 /**
  * ATR Grid bot for trading SOL on Jupiter
  */
-#include "wallet.hpp"
+#include <wallet.hpp>
+#include <logger.hpp>
+#include <iostream>
 
-
-
-static const char *path = "/home/ben/dev/sol-grid-bot/.env";
-
-
-int main()
+int main(int argc, char *argv[])
 {
-    Wallet wal = Wallet();
-    wal.LoadKeys(path);
+    if (argc != 3)
+    {
+        std::cout << "bot [key_path] [log_path]" << std::endl;
+    }
+
+    std::cout << argv[2];
+
+    Logger::init(argv[2]);
+    Wallet wallet = Wallet();
+    wallet.LoadKeys(argv[1]);
     return 1;
 }
