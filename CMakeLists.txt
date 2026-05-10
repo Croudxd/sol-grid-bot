@@ -5,6 +5,16 @@ project(sol-grid-bot)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+find_package(OpenSSL REQUIRED)
+include(FetchContent)
+
+FetchContent_Declare(
+    simdjson
+    GIT_REPOSITORY https://github.com/simdjson/simdjson.git
+    GIT_TAG v4.6.4 
+)
+
+FetchContent_MakeAvailable(simdjson)
 
 set(
     SOURCES 
@@ -12,6 +22,10 @@ set(
         src/wallet.cpp
         src/logger.cpp
         src/config.cpp
+        src/websocket.cpp
+        src/market.cpp
+        src/json.cpp
+        src/book.cpp
 )
 
 add_executable(bot ${SOURCES})
@@ -28,3 +42,5 @@ target_include_directories(bot
         include 
         lib
 )
+
+target_link_libraries(bot PRIVATE OpenSSL::SSL OpenSSL::Crypto simdjson::simdjson)
