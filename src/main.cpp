@@ -3,19 +3,25 @@
  */
 #include <wallet.hpp>
 #include <logger.hpp>
+#include <market.hpp>
 #include <iostream>
+#include <websockets.hpp>
 
 int main(int argc, char *argv[])
 {
-    if (argc != 3)
-    {
-        std::cout << "bot [key_path] [log_path]" << std::endl;
-    }
+    Market market = Market();
+    Book book = Book();
+    Websocket ws = Websocket(market, book);
 
-    std::cout << argv[2];
-
-    Logger::init(argv[2]);
-    Wallet wallet = Wallet();
-    wallet.LoadKeys(argv[1]);
+    // if (argc != 3)
+    // {
+    //     std::cout << "bot [key_path] [log_path]" << std::endl;
+    // }
+    //
+    // std::cout << argv[2];
+    //
+    // Logger::init(argv[2]);
+    // Wallet wallet = Wallet();
+    // wallet.LoadKeys(argv[1]);
     return 1;
 }
